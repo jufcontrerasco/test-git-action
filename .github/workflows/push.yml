@@ -1,0 +1,16 @@
+on: push
+name: deploy
+jobs:
+  deploy: deploy to cluster
+  runs-on: ubuntu-later
+  steps:
+  - uses: actions/checkout@master
+  - name: build and push to docker
+    uses: docker/build-push-action@v1
+    with:
+      username:
+      password:
+      repository:
+      tag_with_ref: true
+      tag_with_sha: true
+      tags: 
